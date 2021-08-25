@@ -1,0 +1,20 @@
+:root {
+    --my-light: #a9cfe2;
+    --my-dark: #1b1d1c
+}
+
+.light-bg {
+    background-color: var(--my-light);
+}
+
+.dark-bg {
+    background-color: var(--my-dark);
+}
+
+.light-text {
+    color: var(--my-light)
+}
+
+.dark-text {
+    color: var(--my-dark)
+}
