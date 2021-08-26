@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 :root {
     --my-light: #a9cfe2;
     --my-dark: #1b1d1c
@@ -17,4 +21,31 @@
 
 .dark-text {
     color: var(--my-dark)
+}
+
+.popup-wrapper {
+    background: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+
+.popup {
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    margin: 10% auto;
+    padding: 20px;
+    position: relative;
+    border-radius: 5px;
+}
+
+.popup-close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
 }
