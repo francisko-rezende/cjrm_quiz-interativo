@@ -5,6 +5,7 @@ const resultSentence = document.querySelector('#result-sentence')
 
 const correctAnswers = ['B', 'B', 'B', 'B']
 let score = 0
+const maxScore = 100
 
 
 const getUserAnswers = () => {
@@ -19,7 +20,6 @@ const getUserAnswers = () => {
 const checkAnswers = (userAnswer, index) => {
     const isAnswerCorrect = userAnswer === correctAnswers[index]
     const numberOfQuestions = correctAnswers.length 
-    const maxScore = 100
     const pointsForGettingAnAnswerRight = maxScore / numberOfQuestions  
     
     if (isAnswerCorrect) {
@@ -28,15 +28,16 @@ const checkAnswers = (userAnswer, index) => {
 }
 
 const showResult = () => {
-    resultSentence.textContent = `Sua pontuação foi ${score}/100`
+    resultSentence.textContent = `Sua pontuação foi ${score}/${maxScore}`
     resultPopupWrapper.style.display = 'block'
 }
 
 const gradeQuizAndShowResult = event => {
     event.preventDefault()
     
-    const userAnswers = getUserAnswers()
     score = 0
+    
+    const userAnswers = getUserAnswers()
 
     userAnswers.forEach(checkAnswers)
 
