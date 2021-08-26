@@ -1,5 +1,6 @@
 const form = document.querySelector('.quiz-form')
-const quizContainer = document.querySelector('.quiz')
+const resultPopupWrapper = document.querySelector('.popup-wrapper')
+const resultSentence = document.querySelector('#result-sentence')
 
 const correctAnswers = ['B', 'B', 'B', 'B']
 
@@ -21,5 +22,15 @@ form.addEventListener('submit', event => {
         }
     })
 
-    quizContainer.innerHTML = `<h2 class="dark-text">Você fez ${score} pontos</h2>`
+    resultSentence.textContent = `Sua pontuação foi ${100 / correctAnswers.length}/100`
+    resultPopupWrapper.style.display = 'block'
+})
+
+resultPopupWrapper.addEventListener('click', event => {
+    const clickedElementClass = event.target.classList[0]
+    const classNames = ['popup-close', 'popup-wrapper', 'popup-close-button']
+
+    if (classNames.includes(clickedElementClass)) {
+        resultPopupWrapper.style.display = 'none'
+    }
 })
