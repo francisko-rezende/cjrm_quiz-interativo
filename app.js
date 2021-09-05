@@ -40,19 +40,18 @@ const animateFinalScore = () => {
     }, 10)
 }
 
+const resetUserScore = () => {
+    score = 0
+}
+
 form.addEventListener('submit', event => {
     event.preventDefault()
 
 
-    //obtém as respostas do usuário
     const userAnswers = getUserAnswers()
 
-    // calcula a pontuação do usuário
+    resetUserScore()
     calculateUserScore(userAnswers)
-    
-    // exibe a pontuação final
     showFinalScore()
-    
-    // anima pontuação final
     animateFinalScore()
 })
